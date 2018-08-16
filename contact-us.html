@@ -12,9 +12,7 @@
 	<link rel="stylesheet" href="css/font-awesome.css" media="all" />
 	<link rel="stylesheet" href="css/themify-icons.css" media="all" />
 	<link rel="stylesheet" href="css/slider-pro.min.css" media="all" />
-	<link rel="stylesheet" href="css/superfish.css" media="all" /> 
-	<link rel="stylesheet" href="css/datepicker.css" media="all" />
-	<link rel="stylesheet" href="css/timepicker.css" media="all" />
+	<link rel="stylesheet" href="css/superfish.css" media="all" />
 	<link rel="stylesheet" href="css/owl.carousel.min.css" media="all" />
 	<link rel="stylesheet" href="css/jquery.navgoco.css" media="all" />
 	<link rel="stylesheet" href="css/animate.css" media="all" />
@@ -144,10 +142,10 @@
 					<div class="col-md-6 col-sm-6 col-xs-12">
 						<div class="widget millside-module-form-10">							
 							<div class="widget-content">								
-								<form class="form-horizontal kopa-form kopa-form-01" action="#" method="POST" role="form">	
+								<form class="form-horizontal kopa-form kopa-form-01" id="requestForm" method="POST" role="form">	
 									<div class="form-group">
 										<div class="col-md-12 col-sm-12 col-xs-12">
-											<input type="text" class="form-control" name="name" placeholder="Name">
+											<input type="text" class="form-control" name="fname" placeholder="Name">
 										</div>
 									</div>
 									<div class="form-group">									
@@ -167,10 +165,10 @@
 									</div>
 									<div class="form-group">
 										<div class="col-md-12 col-sm-12 col-xs-12">
-											<select class="form-control" id="title">
-												<option value="play_zone">Play Zone</option>
-												<option value="sports_zone">Sports Zone</option>
-												<option value="enviro_zone">Enviro Zone</option>
+											<select name="part_type" class="form-control" id="title">
+												<option value="Play Zone">Play Zone</option>
+												<option value="Sports Zone">Sports Zone</option>
+												<option value="Enviro Zone">Enviro Zone</option>
 											</select>
 										</div>
 									</div>								
@@ -179,9 +177,10 @@
 											<textarea class="form-control" rows="8" name="msg" placeholder="Message" ></textarea>
 										</div>
 									</div>
+									<input type= "hidden" name="submit_contact" value="1" />
 									<div class="form-group">								
 										<div class="col-md-12 col-sm-12 col-xs-12 text-right">
-											<button type="submit" class="btn ct-btn-3">Submit</button>
+											<input type="button" id="submitx" class="btn ct-btn-3" value="Submit" />
 										</div>
 									</div>
 								</form>
@@ -224,5 +223,54 @@
 <script type="text/javascript" src="js/jquery.navgoco.min.js"></script>
 
 <script type="text/javascript" src="js/custom.js"></script>
+<!-- Google Map Init-->
+	<script type="text/javascript">
+
+		$('#submitx').click(function() {
+
+			var frmdata = $('#requestForm').serialize();
+			// alert(frmdata);
+			// return;
+
+			$.ajax({
+				type : 'POST',
+				url : 'email.php',
+				data: frmdata,
+				success : function(data){
+					//alert(data);
+					// Do we have a success string ?
+					var suc_index = data.indexOf("{suc}");
+					if(suc_index != -1){
+						var suc_end_index = data.indexOf("{/suc}");
+						var suc_data = data.substring(suc_index+5,suc_end_index);
+
+						if(suc_data != ""){
+							alert(suc_data);
+							return true;
+						}
+					}
+
+					var err_index = data.indexOf("{err}");
+					var err_end_index = data.indexOf("{/err}");
+					var err_data = data.substring(err_index+5,err_end_index);
+					//alert(err_data);
+
+					if(err_data != ""){
+						alert(err_data);
+						return true;
+					}
+					// Show success message
+
+				},
+				error : function(XMLHttpRequest, textStatus, errorThrown) {
+					// Error Message
+				}
+			});
+
+			//return true;
+		});
+
+	</script>
+
 </body>
 </html>
