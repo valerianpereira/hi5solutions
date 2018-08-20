@@ -599,31 +599,31 @@ jQuery(document).ready(function() {
 	});
 
 	/*--- datepicker ---*/
-	jQuery(".date-picker").datepicker({
-		format: 'mm/dd/yyyy',
-		defaultDate:'now',
-		todayHighlight: true,
-		autoclose: true,
-	});
-	jQuery("input.date-picker + span").on('click', function(){		
-		jQuery(this).prev().datepicker().focus();      
-	});
+	// jQuery(".date-picker").datepicker({
+	// 	format: 'mm/dd/yyyy',
+	// 	defaultDate:'now',
+	// 	todayHighlight: true,
+	// 	autoclose: true,
+	// });
+	// jQuery("input.date-picker + span").on('click', function(){		
+	// 	jQuery(this).prev().datepicker().focus();      
+	// });
 
-	/*--- timepicker ---*/
+	// /*--- timepicker ---*/
 
-	jQuery('.time-picker').timepicker({
-		defaultTime: '08:00 AM',
-		icons: {
-			up: 'fa fa-caret-up',
-			down: 'fa fa-caret-down'
-		},
-		showMeridian: false,
-		minuteStep: 5,
-	});
+	// jQuery('.time-picker').timepicker({
+	// 	defaultTime: '08:00 AM',
+	// 	icons: {
+	// 		up: 'fa fa-caret-up',
+	// 		down: 'fa fa-caret-down'
+	// 	},
+	// 	showMeridian: false,
+	// 	minuteStep: 5,
+	// });
 
-	jQuery("input.time-picker + span").on('click', function(){		
-		jQuery(this).prev().timepicker().focus();      
-	});
+	// jQuery("input.time-picker + span").on('click', function(){		
+	// 	jQuery(this).prev().timepicker().focus();      
+	// });
 
 	/*_____________ Loadmore _____________*/
 
