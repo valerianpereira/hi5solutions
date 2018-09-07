@@ -9703,12 +9703,15 @@ input.date-picker + span, input.time-picker + span, input.date-picker + label + 
 .fa-facebook-square:before, .fa-twitter-square:before, .fa-linkedin-square:before {
     font-size:30px;
 }
+
 .fa-facebook-square:before {
     color:#3B5998;
 }
+
 .fa-twitter-square:before {
     color:#1dcaff;
 }
+
 .fa-linkedin-square:before {
     color:#0077B5;
 }
