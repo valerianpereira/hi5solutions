@@ -145,22 +145,22 @@
 								<form class="form-horizontal kopa-form kopa-form-01" id="requestForm" method="POST" role="form">	
 									<div class="form-group">
 										<div class="col-md-12 col-sm-12 col-xs-12">
-											<input type="text" class="form-control" name="fname" placeholder="Name">
+											<input type="text" class="form-control" id="cnt_fname" name="fname" placeholder="Name">
 										</div>
 									</div>
 									<div class="form-group">									
 										<div class="col-md-12 col-sm-12 col-xs-12">
-											<input type="text" class="form-control" name="email" placeholder="Email">
+											<input type="text" class="form-control" id="cnt_email" name="email" placeholder="Email">
 										</div>
 									</div>
 									<div class="form-group">									
 										<div class="col-md-12 col-sm-12 col-xs-12">
-											<input type="text" class="form-control" name="phone" placeholder="Phone No.">
+											<input type="text" class="form-control" id="cnt_phone" name="phone" placeholder="Phone No.">
 										</div>
 									</div>
 									<div class="form-group">									
 										<div class="col-md-12 col-sm-12 col-xs-12">
-											<input type="text" class="form-control" name="location" placeholder="Mumbai, Pune, etc">
+											<input type="text" class="form-control" id="cnt_location" name="location" placeholder="Mumbai, Pune, etc">
 										</div>
 									</div>
 									<div class="form-group">
@@ -174,7 +174,7 @@
 									</div>								
 									<div class="form-group">
 										<div class="col-md-12 col-sm-12 col-xs-12">
-											<textarea class="form-control" rows="8" name="msg" placeholder="Message" ></textarea>
+											<textarea id="cnt_msg" class="form-control" rows="8" name="msg" placeholder="Message" ></textarea>
 										</div>
 									</div>
 									<input type= "hidden" name="submit_contact" value="1" />
@@ -237,9 +237,39 @@ ga('send', 'pageview');
 
 		$('#submitx').click(function() {
 
+			var cnt_fname = $('#cnt_fname').val();
+			if (cnt_fname == "") {
+				alert("Value first name cannot be blank");
+				$('#cnt_fname').focus();
+				return true;
+			}
+			var cnt_email = $('#cnt_email').val();
+			if (cnt_email == "") {
+				alert("Value email cannot be blank");
+				$('#cnt_email').focus();
+				return true;
+			}
+			var cnt_phone = $('#cnt_phone').val();
+			if (cnt_phone == "") {
+				alert("Value phone cannot be blank");
+				$('#cnt_phone').focus();
+				return true;
+			}
+			var cnt_location = $('#cnt_location').val();
+			if (cnt_location == "") {
+				alert("Value location cannot be blank");
+				$('#cnt_location').focus();
+				return true;
+			}
+
+			var cnt_msg = $('#cnt_msg').val();
+			if (cnt_msg == "") {
+				alert("Value message cannot be blank");
+				$('#cnt_msg').focus();
+				return true;
+			}
+
 			var frmdata = $('#requestForm').serialize();
-			// alert(frmdata);
-			// return;
 
 			$.ajax({
 				type : 'POST',

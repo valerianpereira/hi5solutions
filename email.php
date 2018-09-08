@@ -13,7 +13,7 @@ function printerr($strr){
 }
 
 //echo '{suc}Email sent successfully{/suc}';
-printerr($_POST);
+//printerr($_POST);
 //die();
 
 if(!empty($_POST['submit_contact'])) {
