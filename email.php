@@ -1,11 +1,13 @@
 
 <?php
 
+// Clean Up
 function clean_string($string) {
 	$bad = array("content-type","bcc:","to:","cc:","href");
 	return str_replace($bad,"",$string);
 }
 
+// Print Format
 function printerr($strr){
 	echo '<pre>';
 	print_r($strr);
