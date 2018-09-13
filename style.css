@@ -9700,7 +9700,7 @@ input.date-picker + span, input.time-picker + span, input.date-picker + label + 
     margin: 0;
 }
 
-.fa-facebook-square:before, .fa-twitter-square:before, .fa-linkedin-square:before {
+.fa-facebook-square:before, .fa-twitter-square:before, .fa-linkedin-square:before, .fa-pinterest-square:before, .fa-google-plus-square:before {
     font-size:30px;
 }
 
@@ -9714,4 +9714,12 @@ input.date-picker + span, input.time-picker + span, input.date-picker + label + 
 
 .fa-linkedin-square:before {
     color:#0077B5;
+}
+
+.fa-pinterest-square:before {
+  color:#BD081C;
+}
+
+.fa-google-plus-square:before {
+  color:#DD4D42;
 }
