@@ -1,0 +1,5 @@
+# robots.txt
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Sitemap: https://www.hi5solutions.in/sitemap.xml
