@@ -6,3 +6,6 @@ hi5solutions.in website - static site and holds all relevant contents
 # Sports Zone
 
 # Enviro Zone
+
+# Blog 
+Powered by WordPress
