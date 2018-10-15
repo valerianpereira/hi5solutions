@@ -6,28 +6,51 @@ RewriteCond %{HTTP_REFERER} !^$
 RewriteRule .*\.(jpe?g|gif|bmp|png)$ /images/stop-hotlinking-images.jpg [L]
 
 <FilesMatch "\.(ttf|otf|eot|woff)$">
-<IfModule mod_headers.c>    
-    Header set Access-Control-Allow-Origin "https://hi5solutions.in"
-</IfModule>
+    <IfModule mod_headers.c>    
+        Header set Access-Control-Allow-Origin "https://hi5solutions.in"
+    </IfModule>
 </FilesMatch>
 
-# 1 YEAR
-<FilesMatch "\.(ico|pdf|flv)$">
-Header set Cache-Control "max-age=29030400, public"
-</FilesMatch>
-# 1 WEEK
-<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
-Header set Cache-Control "max-age=604800, public"
-</FilesMatch>
-# 2 DAYS
-<FilesMatch "\.(xml|txt|css|js)$">
-Header set Cache-Control "max-age=172800, proxy-revalidate"
-</FilesMatch>
+<filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|svg|js|css|swf)$">
+    Header set Cache-Control "max-age=2592000, public"
+</filesMatch>
+
 # 1 MIN
 <FilesMatch "\.(html|htm|php)$">
-Header set Cache-Control "max-age=60, private, proxy-revalidate"
+    Header set Cache-Control "max-age=60, private, proxy-revalidate"
 </FilesMatch>
 
+## EXPIRES HEADER CACHING ##
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Video
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/mpeg "access plus 1 year"
+
+  # CSS, JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+
+  # Others
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType application/x-shockwave-flash "access plus 1 month"
+
+  # Default
+  ExpiresDefault "access 2 days"
+</IfModule>
+## EXPIRES HEADER CACHING ##
+
+## GZIPPING ##
 <ifModule mod_gzip.c>
   mod_gzip_on Yes
   mod_gzip_dechunk Yes
@@ -37,3 +60,4 @@ Header set Cache-Control "max-age=60, private, proxy-revalidate"
   mod_gzip_item_exclude mime ^image/.*
   mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
 </ifModule>
+## GZIPPING ##
