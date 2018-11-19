@@ -28,7 +28,7 @@
 }
 
 .slick-list:focus {
-  outline: none;
+  outline: unset;
 }
 
 .slick-list.dragging {
