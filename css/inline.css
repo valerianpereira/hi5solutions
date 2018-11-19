@@ -36,30 +36,26 @@
    left: 100%;
  }
 
- /*** DEMO SKIN ***/
  .sf-menu {
    float: left;
    margin-bottom: 1em;
  }
 
- /*** arrows (for all except IE7) **/
  .sf-arrows .sf-with-ul {
    padding-right: 2.5em;
-   *padding-right: 1em;
-   /* no CSS arrows for IE7 (lack pseudo-elements) */
+   padding-right: 1em;
  }
 
- /* styling for both css and generated arrows */
  .sf-arrows .sf-with-ul:after {
    content: '';
  }
 
  .align-fields-center {
-   text-align: center !important;
+   text-align: center;
  }
 
  .enviro-color {
-   color: #35885d !important;
+   color: #35885d;
  }
 
  .breadcrumb-content>span:nth-child(1):after,
