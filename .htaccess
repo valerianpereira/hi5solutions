@@ -1,7 +1,7 @@
 RewriteEngine On
 
 #Replace /images/nohotlink.jpg with your "don't hotlink" image url
-RewriteRule .*\.(jpe?g|gif|bmp|png)$ /images/stop-hotlinking-images.jpg [L]
+RewriteRule .*\.(jpeg|gif|bmp|png)$ /images/stop-hotlinking-images.jpg [L]
 
 <FilesMatch "\.(ttf|otf|eot|woff)$">
     <IfModule mod_headers.c>
