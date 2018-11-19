@@ -1,5 +1,4 @@
- .sf-menu,
- .sf-menu * {
+ .sf-menu{
    margin: 0;
    padding: 0;
    list-style: none;
@@ -22,7 +21,7 @@
  }
 
  .sf-menu li:hover>ul,
- .sf-menu li.sfHover>ul {
+ .sf-menu .sfHover>ul {
    display: block;
  }
 
