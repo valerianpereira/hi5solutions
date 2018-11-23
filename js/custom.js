@@ -37,12 +37,12 @@ jQuery(document).ready(function() {
 	});
 	jQuery( '.slider-pro-2' ).sliderPro({		
 		width: 1349,
-		height: 639,
+		height: 470,
 		forceSize: 'fullWidth',
 		arrows: false,
 		buttons: true,
 		waitForLayers: false,
-		autoplay: false,
+		autoplay: true,
 		fadeOutPreviousSlide: true,
 		autoScaleLayers: true,
 		responsive: true,
@@ -626,80 +626,6 @@ jQuery(document).ready(function() {
 	// });
 
 	/*_____________ Loadmore _____________*/
-
-
-	var link_to_github_1 = "https://gist.githubusercontent.com/minhnguyenanh/4dc75123a685d88c672d36039402fc2d/raw/f0cc1b5fdfac5570a97ca0ab98398427b5dcf655/millside_01";
-	jQuery('#lm-btn-1').on('click',function(){
-		var button_1 = jQuery(this);
-		jQuery.ajax({
-			url:link_to_github_1,
-			beforeSend: function( xhr ) {
-			},
-		})
-		.done(function(data) {
-            // console.log(data);
-            jQuery(data).imagesLoaded(function() {
-
-            	var pos_ins_data_1 =  button_1.parent().parent().prev();
-
-            	var items = jQuery(data).find('>li');
-
-            	if(items.length){
-            		jQuery.each(items, function(items, index){
-            			jQuery(pos_ins_data_1).append(jQuery(this)).masonry( 'appended', jQuery(this));
-            		});
-            	}
-            });
-        });
-	});
-
-
-	var link_to_github_2 = "https://gist.githubusercontent.com/minhnguyenanh/699c1731fbda610234abeecfd05f30a5/raw/b52b56416aec39c7d901938588ee33889184f190/millside_02";
-	jQuery('#lm-btn-2').on('click',function(){
-		var button_2 = jQuery(this);
-		jQuery.ajax({
-			url:link_to_github_2,
-			beforeSend: function( xhr ) {
-			},
-		})
-		.done(function(data) {
-			jQuery(data).imagesLoaded(function() {
-				var pos_ins_data_2 =  button_2.parent().parent().prev();
-				var items = jQuery(data).find('> li');
-				if(items.length){
-					jQuery.each(items, function(items, index){
-						jQuery(pos_ins_data_2).append(jQuery(this)).children().matchHeight();
-					});
-				}
-			});
-		});
-	});
-
-
-	var link_to_github_3 = "https://gist.githubusercontent.com/minhnguyenanh/46f0cb454cfddc065c1d85096945a895/raw/317d9a0288231c319cf3758f6c091787b4fad765/millside_03";
-	jQuery('#lm-btn-3').on('click',function(){
-		var button_3 = jQuery(this);
-		jQuery.ajax({
-			url:link_to_github_3,
-			beforeSend: function( xhr ) {
-			},
-		})
-		.done(function(data) {
-			jQuery(data).imagesLoaded(function() {
-				var pos_ins_data_3 =  button_3.parent().parent().prev();
-				var items = jQuery(data).find('> li');
-				if(items.length){
-					jQuery.each(items, function(items, index){
-						jQuery(pos_ins_data_3).append(jQuery(this)).children().matchHeight();
-					});
-				}
-			});
-		});
-	});
-
-
-
-
 
 
 
