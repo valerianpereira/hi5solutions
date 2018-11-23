@@ -9856,7 +9856,7 @@ input.date-picker + span, input.time-picker + span, input.date-picker + label + 
   margin-top: 75px !important;
 }
 
-@media only screen and (min-width:600px) {
+@media only screen and (max-width:600px) {
   .products-mb-30 {
     margin-bottom: 30px !important;
   }
