@@ -1,5 +1,6 @@
 RewriteEngine On
-
+RewriteCond %{HTTP_REFERER} !^https://(.+\.)?hi5solutions\.in/ [NC]
+RewriteCond %{HTTP_REFERER} !^$
 #Replace /images/nohotlink.jpg with your "don't hotlink" image url
 RewriteRule .*\.(jpeg|gif|bmp|png)$ /images/stop-hotlinking-images.jpg [L]
 
