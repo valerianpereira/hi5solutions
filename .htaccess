@@ -1,13 +1,11 @@
 RewriteEngine On
-#Replace ?mysite\.com/ with your blog url
-RewriteCond %{HTTP_REFERER} !^https://(.+\.)?hi5solutions\.in/ [NC]
-RewriteCond %{HTTP_REFERER} !^$
+
 #Replace /images/nohotlink.jpg with your "don't hotlink" image url
-RewriteRule .*\.(jpe?g|gif|bmp|png)$ /images/stop-hotlinking-images.jpg [L]
+RewriteRule .*\.(jpeg|gif|bmp|png)$ /images/stop-hotlinking-images.jpg [L]
 
 <FilesMatch "\.(ttf|otf|eot|woff)$">
-    <IfModule mod_headers.c>    
-        Header set Access-Control-Allow-Origin "https://hi5solutions.in"
+    <IfModule mod_headers.c>
+	Header set Access-Control-Allow-Origin "https://www.hi5solutions.in"
     </IfModule>
 </FilesMatch>
 
@@ -16,7 +14,7 @@ RewriteRule .*\.(jpe?g|gif|bmp|png)$ /images/stop-hotlinking-images.jpg [L]
 </filesMatch>
 
 # 1 MIN
-<FilesMatch "\.(html|htm|php)$">
+<FilesMatch "\.(html|htm)$">
     Header set Cache-Control "max-age=60, private, proxy-revalidate"
 </FilesMatch>
 
