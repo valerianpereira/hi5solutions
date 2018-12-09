@@ -47,7 +47,7 @@ jQuery(document).ready(function() {
 		autoScaleLayers: true,
 		responsive: true,
 		slideDistance: 0,
-		autoplayDelay: 1000,
+		autoplayDelay: 3000,
 	});
 
 	jQuery( '.slider-pro-3' ).sliderPro({
