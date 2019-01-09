@@ -193,84 +193,9 @@ ga('send', 'pageview');
 </script>
 <!-- End Google Analytics -->
 
-
-<!-- Google Map Init-->
-	<script>
-
-		$('#submitx').click(function() {
-
-			var cnt_fname = $('#cnt_fname').val();
-			if (cnt_fname == "") {
-				alert("Value first name cannot be blank");
-				$('#cnt_fname').focus();
-				return true;
-			}
-			var cnt_email = $('#cnt_email').val();
-			if (cnt_email == "") {
-				alert("Value email cannot be blank");
-				$('#cnt_email').focus();
-				return true;
-			}
-			var cnt_phone = $('#cnt_phone').val();
-			if (cnt_phone == "") {
-				alert("Value phone cannot be blank");
-				$('#cnt_phone').focus();
-				return true;
-			}
-			var cnt_location = $('#cnt_location').val();
-			if (cnt_location == "") {
-				alert("Value location cannot be blank");
-				$('#cnt_location').focus();
-				return true;
-			}
-
-			var cnt_msg = $('#cnt_msg').val();
-			if (cnt_msg == "") {
-				alert("Value message cannot be blank");
-				$('#cnt_msg').focus();
-				return true;
-			}
-
-			var frmdata = $('#requestForm').serialize();
-
-			$.ajax({
-				type : 'POST',
-				url : 'email.php',
-				data: frmdata,
-				success : function(data){
-					//alert(data);
-					// Do we have a success string ?
-					var suc_index = data.indexOf("{suc}");
-					if(suc_index != -1){
-						var suc_end_index = data.indexOf("{/suc}");
-						var suc_data = data.substring(suc_index+5,suc_end_index);
-
-						if(suc_data != ""){
-							alert(suc_data);
-							return true;
-						}
-					}
-
-					var err_index = data.indexOf("{err}");
-					var err_end_index = data.indexOf("{/err}");
-					var err_data = data.substring(err_index+5,err_end_index);
-
-					if(err_data != ""){
-						alert(err_data);
-						return true;
-					}
-					// Show success message
-
-				},
-				error : function(XMLHttpRequest, textStatus, errorThrown) {
-					// Error Message
-				}
-			});
-
-			//return true;
-		});
-
-	</script>
+<!-- LinkedIN Analytics -->
+<script type="text/javascript"> _linkedin_partner_id = "346451"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); </script><script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script> <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=346451&fmt=gif" /> </noscript>
+<!-- End LinkedIN Analytics -->
 
 </body>
 </html>
