@@ -6,7 +6,7 @@ PlayGround Equipments and other equipments.
 
 # Play Zone
 
-# Sports Zone
+# Sports Flooring
 
 # Enviro Zone
 
