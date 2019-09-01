@@ -22,7 +22,7 @@ if(!empty($_POST['submit_contact'])) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
     $email_to = "info@hi5solutions.in";
-    $email_subject = 'Contact Us : '.$_POST['name'].' | Email from Hi5Solution Website';
+    $email_subject = 'Contact Us : '.$_POST['fname'].' | Email from Hi5Solution Website';
 
     $first_name = $_POST['fname']; // required
     $email_from = $_POST['email']; // required
