@@ -8,7 +8,7 @@ PlayGround and other equipments.
 
 # Sports Flooring
 
-# Ozone Generator
+# Sanitization
 
 # Blog 
 Powered by WordPress
